@@ -8,6 +8,8 @@
   "devDependencies": {
     "@types/react": "^16.9.48",
     "@types/react-dom": "^16.9.8",
+    "@types/react-tabs": "^2.3.2",
+    "@types/styled-components": "^5.1.2",
     "typescript": "^4.0.2"
   },
   "peerDependencies": {
@@ -17,5 +19,9 @@
     "start": "npm run clean && tsc -p tsconfig.json --declaration --watch",
     "build": "npm run clean && tsc -p tsconfig.json --declaration",
     "clean": "rm -rf lib"
+  },
+  "dependencies": {
+    "react-tabs": "^3.1.1",
+    "styled-components": "^5.1.1"
   }
 }
