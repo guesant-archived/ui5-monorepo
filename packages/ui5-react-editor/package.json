@@ -1,5 +1,5 @@
 {
-  "name": "@ui5/ui5-react",
+  "name": "@ui5/ui5-react-editor",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
