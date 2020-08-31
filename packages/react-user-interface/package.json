@@ -1,0 +1,8 @@
+{
+  "name": "@ui5/react-user-interface",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/guesant/ui5-monorepo.git",
+  "author": "Gabriel Rodrigues <jipacoding@gmail.com>",
+  "license": "GPL-3.0"
+}
