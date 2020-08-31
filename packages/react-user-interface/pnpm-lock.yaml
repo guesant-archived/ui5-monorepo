@@ -1,0 +1,38 @@
+devDependencies:
+  '@types/react': 16.9.48
+  '@types/react-dom': 16.9.8
+  typescript: 4.0.2
+lockfileVersion: 5.1
+packages:
+  /@types/prop-types/15.7.3:
+    dev: true
+    resolution:
+      integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+  /@types/react-dom/16.9.8:
+    dependencies:
+      '@types/react': 16.9.48
+    dev: true
+    resolution:
+      integrity: sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
+  /@types/react/16.9.48:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 3.0.3
+    dev: true
+    resolution:
+      integrity: sha512-4ykBVswgYitPGMXFRxJCHkxJDU2rjfU3/zw67f8+dB7sNdVJXsrwqoYxz/stkAucymnEEbRPFmX7Ce5Mc/kJCw==
+  /csstype/3.0.3:
+    dev: true
+    resolution:
+      integrity: sha512-jPl+wbWPOWJ7SXsWyqGRk3lGecbar0Cb0OvZF/r/ZU011R4YqiRehgkQ9p4eQfo9DSDLqLL3wHwfxeJiuIsNag==
+  /typescript/4.0.2:
+    dev: true
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
+specifiers:
+  '@types/react': ^16.9.48
+  '@types/react-dom': ^16.9.8
+  typescript: ^4.0.2
