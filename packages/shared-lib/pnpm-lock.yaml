@@ -2,6 +2,7 @@ devDependencies:
   '@babel/core': 7.11.4
   '@babel/preset-env': 7.11.0_@babel+core@7.11.4
   '@babel/preset-typescript': 7.10.4_@babel+core@7.11.4
+  '@fantastic-images/lib': 'link:../../../fantastic-images/packages/lib'
   babel-jest: 26.3.0_@babel+core@7.11.4
   jest: 26.4.2
   tslib: 2.0.1
