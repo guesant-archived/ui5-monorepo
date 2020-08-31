@@ -7,5 +7,10 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "start": "npm run clean && tsc -p tsconfig.json --declaration --watch",
+    "build": "npm run clean && tsc -p tsconfig.json --declaration",
+    "clean": "rm -rf lib"
   }
 }
