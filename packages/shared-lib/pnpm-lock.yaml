@@ -5,7 +5,7 @@ packages:
   /typescript/4.0.2:
     dev: true
     engines:
-      node: '>=4.2.0'
+      node: ">=4.2.0"
     hasBin: true
     resolution:
       integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
