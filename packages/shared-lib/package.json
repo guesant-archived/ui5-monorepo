@@ -11,6 +11,7 @@
     "@babel/preset-typescript": "^7.10.4",
     "@fantastic-images/lib": "link:../../../fantastic-images/packages/lib",
     "@fantastic-images/types": "link:../../../fantastic-images/packages/types",
+    "@types/fabric": "^3.6.8",
     "babel-jest": "^26.3.0",
     "jest": "^26.4.2",
     "tslib": "^2.0.1",
