@@ -20,12 +20,17 @@ const GridHeader = styled.div`
   grid-area: header;
 `;
 
+const GridLeft = styled.div`
+  grid-area: left;
+`;
+
 class Editor extends React.Component {
   render() {
     return (
       <div>
         <EditorGrid>
           <GridHeader />
+          <GridLeft />
         </EditorGrid>
       </div>
     );
