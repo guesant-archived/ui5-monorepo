@@ -24,6 +24,10 @@ const GridLeft = styled.div`
   grid-area: left;
 `;
 
+const GridRight = styled.div`
+  grid-area: right;
+`;
+
 class Editor extends React.Component {
   render() {
     return (
@@ -31,6 +35,7 @@ class Editor extends React.Component {
         <EditorGrid>
           <GridHeader />
           <GridLeft />
+          <GridRight />
         </EditorGrid>
       </div>
     );
