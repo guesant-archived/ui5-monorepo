@@ -12,9 +12,9 @@
   },
   "scripts": {
     "build:css": "gulp buildCSS",
-    "start": "npm run build:css && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
-    "test": "react-scripts test",
+    "start": "npm run build:css && craco start",
+    "build": "npm run build:css && craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -33,11 +33,15 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^5.6.4",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "autoprefixer": "^9.8.6",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^2.3.0",
     "gulp-sass": "^4.1.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "postcss-cli": "^7.1.1"
   }
 }
