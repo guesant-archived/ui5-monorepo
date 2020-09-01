@@ -5,6 +5,8 @@ devDependencies:
   '@fantastic-images/lib': 'link:../../../fantastic-images/packages/lib'
   '@fantastic-images/types': 'link:../../../fantastic-images/packages/types'
   '@types/fabric': 3.6.8
+  '@types/react': 16.9.49
+  '@types/react-dom': 16.9.8
   babel-jest: 26.3.0_@babel+core@7.11.4
   jest: 26.4.2
   tslib: 2.0.1
@@ -1282,6 +1284,23 @@ packages:
     dev: true
     resolution:
       integrity: sha512-hiYA88aHiEIgDmeKlsyVsuQdcFn3Z2VuFd/Xm/HCnGnPD8UFU5BM128uzzRVVGEzKDKYUrRsRH9S2o+NUy/3IA==
+  /@types/prop-types/15.7.3:
+    dev: true
+    resolution:
+      integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+  /@types/react-dom/16.9.8:
+    dependencies:
+      '@types/react': 16.9.49
+    dev: true
+    resolution:
+      integrity: sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
+  /@types/react/16.9.49:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 3.0.3
+    dev: true
+    resolution:
+      integrity: sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
   /@types/stack-utils/1.0.1:
     dev: true
     resolution:
@@ -1820,6 +1839,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
+  /csstype/3.0.3:
+    dev: true
+    resolution:
+      integrity: sha512-jPl+wbWPOWJ7SXsWyqGRk3lGecbar0Cb0OvZF/r/ZU011R4YqiRehgkQ9p4eQfo9DSDLqLL3wHwfxeJiuIsNag==
   /dashdash/1.14.1:
     dependencies:
       assert-plus: 1.0.0
@@ -4675,6 +4698,8 @@ specifiers:
   '@fantastic-images/lib': 'link:../../../fantastic-images/packages/lib'
   '@fantastic-images/types': 'link:../../../fantastic-images/packages/types'
   '@types/fabric': ^3.6.8
+  '@types/react': ^16.9.49
+  '@types/react-dom': ^16.9.8
   babel-jest: ^26.3.0
   jest: ^26.4.2
   tslib: ^2.0.1
