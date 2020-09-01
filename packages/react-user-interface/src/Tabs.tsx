@@ -1,18 +1,15 @@
-import { createElement } from "react";
 import { Tabs, TabList, TabPanel, Tab, TabProps } from "react-tabs";
 import styled from "styled-components";
 
 const StyledTabs = styled(Tabs)``;
 
-const StyledTab = styled((props: TabProps) =>
-  createElement(Tab, { ...props, selectedClassName: "tab-selected" }),
-)`
+const StyledTab = styled(Tab)`
   cursor: default;
   padding: 2px;
   font-size: 14px;
   opacity: 0.6;
   &:hover,
-  &.tab-selected {
+  &.react-tabs__tab--selected {
     opacity: 1;
   }
   & + & {
