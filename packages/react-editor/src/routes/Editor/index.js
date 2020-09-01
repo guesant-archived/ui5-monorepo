@@ -16,11 +16,17 @@ const EditorGrid = styled.div`
   }
 `;
 
+const GridHeader = styled.div`
+  grid-area: header;
+`;
+
 class Editor extends React.Component {
   render() {
     return (
       <div>
-        <EditorGrid />
+        <EditorGrid>
+          <GridHeader />
+        </EditorGrid>
       </div>
     );
   }
