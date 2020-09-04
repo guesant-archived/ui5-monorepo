@@ -51,6 +51,9 @@ class Editor extends React.Component {
     };
     this.subscribePlugin = this.subscribePlugin.bind(this);
     this.setEditorBlock = this.setEditorBlock.bind(this);
+    ["header", "left", "right", "canvas", "footer"].forEach((location) => {
+      this.setEditorBlock(location, fragment);
+    });
   }
   async onSetTemplate(template) {
     await new Promise((resolve) => this.setState({ template }, resolve));
@@ -81,11 +84,21 @@ class Editor extends React.Component {
     return (
       <div>
         <EditorGrid>
-          <GridHeader />
-          <GridLeft />
-          <GridCanvas />
-          <GridRight />
-          <GridFooter />
+          <GridHeader>
+            {React.createElement(this.getEditorBlock("header"))}
+          </GridHeader>
+          <GridLeft>
+            {React.createElement(this.getEditorBlock("left"))}
+          </GridLeft>
+          <GridCanvas>
+            {React.createElement(this.getEditorBlock("canvas"))}
+          </GridCanvas>
+          <GridRight>
+            {React.createElement(this.getEditorBlock("right"))}
+          </GridRight>
+          <GridFooter>
+            {React.createElement(this.getEditorBlock("footer"))}
+          </GridFooter>
         </EditorGrid>
       </div>
     );
