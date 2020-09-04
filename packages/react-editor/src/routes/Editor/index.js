@@ -41,16 +41,29 @@ class Editor extends React.Component {
   constructor(props) {
     super(props);
     this.events = new EventEmitter();
+    this.plugins = new Set();
     this.state = {
       editor: {},
       template: {},
     };
+    this.subscribePlugin = this.subscribePlugin.bind(this);
   }
   async onSetTemplate(template) {
     await new Promise((resolve) => this.setState({ template }, resolve));
   }
   async onSetEditor(editor) {
     await new Promise((resolve) => this.setState({ editor }, resolve));
+  }
+  subscribePlugin(plugin) {
+    this.plugins.add(plugin);
+    plugin.setEditor(this);
+    plugin.onSetup();
+  }
+  componentDidMount() {
+    this.plugins.forEach((plugin) => {
+      plugin.setEditor(this);
+      plugin.onMount();
+    });
   }
   render() {
     return (
