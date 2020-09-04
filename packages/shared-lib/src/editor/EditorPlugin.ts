@@ -18,9 +18,14 @@
  */
 //endregion
 
+import { Editor } from "./Editor";
 
 export abstract class EditorPlugin {
+  editor?: Editor = undefined;
   abstract onRegisterPlugin(): EditorPluginInfo;
   onSetup() {}
   onMount() {}
+  setEditor(editor: this["editor"]) {
+    this.editor = editor;
+  }
 }
