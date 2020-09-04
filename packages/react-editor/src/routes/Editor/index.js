@@ -37,6 +37,8 @@ const GridFooter = styled.div`
   grid-area: footer;
 `;
 
+const fragment = () => <React.Fragment />;
+
 class Editor extends React.Component {
   constructor(props) {
     super(props);
@@ -58,6 +60,11 @@ class Editor extends React.Component {
   }
   setEditorBlock(location, component) {
     this.editorBlocks.set(location, component);
+  }
+  getEditorBlock(location) {
+    this.editorBlocks.has(location)
+      ? this.editorBlocks.get(location)
+      : fragment;
   }
   subscribePlugin(plugin) {
     this.plugins.add(plugin);
