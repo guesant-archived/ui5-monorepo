@@ -41,6 +41,12 @@ class Editor extends React.Component {
   constructor(props) {
     super(props);
     this.events = new EventEmitter();
+    this.state = {
+      editor: {},
+    };
+  }
+  async onSetEditor(editor) {
+    await new Promise((resolve) => this.setState({ editor }, resolve));
   }
   render() {
     return (
