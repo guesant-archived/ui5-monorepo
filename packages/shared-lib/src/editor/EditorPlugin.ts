@@ -20,6 +20,9 @@
 
 import { Editor } from "./Editor";
 
+export interface EditorPluginInfo {
+}
+
 export abstract class EditorPlugin {
   editor?: Editor = undefined;
   abstract onRegisterPlugin(): EditorPluginInfo;
