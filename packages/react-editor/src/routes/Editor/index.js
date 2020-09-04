@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { EventEmitter } from "@ui5/shared-lib/lib/EventEmitter";
 
 const EditorGrid = styled.div`
   display: grid;
@@ -37,6 +38,10 @@ const GridFooter = styled.div`
 `;
 
 class Editor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.events = new EventEmitter();
+  }
   render() {
     return (
       <div>
