@@ -52,7 +52,7 @@ class Editor extends React.Component {
     this.subscribePlugin = this.subscribePlugin.bind(this);
     this.setEditorBlock = this.setEditorBlock.bind(this);
     ["header", "left", "right", "canvas", "footer"].forEach((location) => {
-      this.setEditorBlock(location, fragment);
+      this.setEditorBlock(location, fragment, { forceUpdate: false });
     });
   }
   async onSetTemplate(template) {
