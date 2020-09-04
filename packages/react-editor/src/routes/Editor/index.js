@@ -76,6 +76,9 @@ class Editor extends React.Component {
     plugin.onSetup();
   }
   componentDidMount() {
+    this.events.on("SetEditorComponent", ([location, component]) => {
+      this.setEditorBlock(location, component);
+    });
     this.plugins.forEach((plugin) => {
       plugin.setEditor(this);
       plugin.onMount();
