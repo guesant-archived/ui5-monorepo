@@ -51,7 +51,7 @@ class Editor extends React.Component {
     };
     this.subscribePlugin = this.subscribePlugin.bind(this);
     this.setEditorBlock = this.setEditorBlock.bind(this);
-    ["header", "left", "right", "canvas"].forEach((location) => {
+    ["header", "left", "right", "canvas", "footer"].forEach((location) => {
       this.setEditorBlock(location, fragment);
     });
   }
@@ -96,7 +96,9 @@ class Editor extends React.Component {
           <GridRight>
             {React.createElement(this.getEditorBlock("right"))}
           </GridRight>
-          <GridFooter />
+          <GridFooter>
+            {React.createElement(this.getEditorBlock("footer"))}
+          </GridFooter>
         </EditorGrid>
       </div>
     );
