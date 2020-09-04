@@ -43,7 +43,11 @@ class Editor extends React.Component {
     this.events = new EventEmitter();
     this.state = {
       editor: {},
+      template: {},
     };
+  }
+  async onSetTemplate(template) {
+    await new Promise((resolve) => this.setState({ template }, resolve));
   }
   async onSetEditor(editor) {
     await new Promise((resolve) => this.setState({ editor }, resolve));
