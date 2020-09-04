@@ -66,7 +66,7 @@ class Editor extends React.Component {
     forceUpdate && this.forceUpdate();
   }
   getEditorBlock(location) {
-    this.editorBlocks.has(location)
+    return this.editorBlocks.has(location)
       ? this.editorBlocks.get(location)
       : fragment;
   }
