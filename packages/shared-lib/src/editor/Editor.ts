@@ -12,7 +12,11 @@ export interface Editor extends Component {
     editor: {};
     template: Template;
   };
-  setEditorBlock(location: EditorBlockKey, component: EditorBlockValue): void;
+  setEditorBlock(
+    location: EditorBlockKey,
+    component: EditorBlockValue,
+    { forceUpdate }: { forceUpdate: boolean },
+  ): void;
   getEditorBlock(location: EditorBlockKey): EditorBlockValue;
   onSetTemplate(template: this["state"]["template"]): Promise<void>;
   onSetEditor(editor: this["state"]["editor"]): Promise<void>;
