@@ -20,13 +20,13 @@
 
 import * as React from "react";
 import styled from "styled-components";
-import { InputBaseProps } from "./InputBase";
+import { InputBaseProps, InputBase } from "./InputBase";
 
 export interface InputTextProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  style: InputBaseProps["style"];
-  prefix: InputBaseProps["prefix"];
-  rightPreview: boolean;
+  style?: InputBaseProps["style"];
+  prefix?: InputBaseProps["prefix"];
+  rightPreview?: boolean;
 }
 
 export const StyledInputText = styled.input`
@@ -35,6 +35,7 @@ export const StyledInputText = styled.input`
   padding: 4px 4px 4px 6px;
   line-height: 1;
   width: 100%;
+  max-width: 100%;
   &[type="color"] {
     height: 100%;
     width: 25px;
@@ -47,7 +48,7 @@ export const InputText = ({
   rightPreview,
   ...props
 }: InputTextProps) => (
-  <StyledInputText
+  <InputBase
     style={style}
     prefix={prefix}
     children={
