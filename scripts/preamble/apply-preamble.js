@@ -28,7 +28,7 @@ const { genericJS } = require("./preamble");
 const basepath = join(__dirname, "../../packages/*");
 
 glob(
-  join(basepath, "!(node_modules|lib)/*.{js,jsx,ts,tsx}"),
+  join(basepath, "!(node_modules|lib)/**/*.{js,jsx,ts,tsx}"),
   { nodir: true },
   (_, files) => {
     files.forEach((file) => {
