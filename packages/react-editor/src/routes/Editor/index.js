@@ -46,7 +46,9 @@ class Editor extends React.Component {
     this.plugins = new Set();
     this.editorBlocks = new Map();
     this.state = {
-      editor: {},
+      editor: {
+        selectedObjects: [],
+      },
       template: {},
     };
     this.subscribePlugin = this.subscribePlugin.bind(this);

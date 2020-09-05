@@ -9,7 +9,9 @@ export interface Editor extends Component {
   events: EventEmitter;
   editorBlocks: Map<EditorBlockKey, EditorBlockValue>;
   state: {
-    editor: {};
+    editor: {
+      selectedObjects: number[];
+    };
     template: Template;
   };
   setEditorBlock(
