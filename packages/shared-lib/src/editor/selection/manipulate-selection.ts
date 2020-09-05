@@ -18,7 +18,10 @@
  */
 //endregion
 
-export type SupportedActions = "toggle" | "clear";
+import { range } from "../../range";
+import { minmax } from "../../minmax";
+
+export type SupportedActions = "toggle" | "range" | "clear";
 
 export const clearSelection = () => () => [];
 
@@ -27,12 +30,30 @@ export const toggleSelection = (selectedItems: number[]) => (idx: number) =>
     ? [...selectedItems.filter((i) => i !== idx)]
     : [...selectedItems, idx];
 
+const asc = (a: number, b: number) => a - b;
+const desc = (a: number, b: number) => b - a;
+
+export const rangeSelection = (selectedItems: number[]) => (idx: number) => [
+  ...selectedItems,
+  ...[
+    ...(selectedItems.length
+      ? range(
+          ...minmax({ withMax: (n) => n + 1 })(idx, selectedItems.slice(-1)[0]),
+        )
+          .filter((i) => !selectedItems.includes(i))
+          .sort(idx < selectedItems.slice(-1)[0] ? desc : asc)
+      : []),
+  ],
+];
+
 export const manipulateSelection = (mode: SupportedActions) => (
   selectedItems: number[],
 ) => (idx: number) => {
   switch (mode) {
     case "toggle":
       return toggleSelection(selectedItems)(idx);
+    case "range":
+      return rangeSelection(selectedItems)(idx);
     case "clear":
       return clearSelection()();
   }
