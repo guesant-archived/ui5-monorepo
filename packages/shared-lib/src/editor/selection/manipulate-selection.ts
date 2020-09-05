@@ -18,14 +18,21 @@
  */
 //endregion
 
-export type SupportedActions = "clear";
+export type SupportedActions = "toggle" | "clear";
 
 export const clearSelection = () => () => [];
+
+export const toggleSelection = (selectedItems: number[]) => (idx: number) =>
+  selectedItems.includes(idx)
+    ? [...selectedItems.filter((i) => i !== idx)]
+    : [...selectedItems, idx];
 
 export const manipulateSelection = (mode: SupportedActions) => (
   selectedItems: number[],
 ) => (idx: number) => {
   switch (mode) {
+    case "toggle":
+      return toggleSelection(selectedItems)(idx);
     case "clear":
       return clearSelection()();
   }
