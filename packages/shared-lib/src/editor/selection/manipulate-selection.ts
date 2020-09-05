@@ -21,7 +21,7 @@
 import { range } from "../../range";
 import { minmax } from "../../minmax";
 
-export type SupportedActions = "toggle" | "range" | "clear";
+export type SupportedActions = "toggle" | "range" | "select" | "clear";
 
 export const clearSelection = () => () => [];
 
@@ -56,5 +56,7 @@ export const manipulateSelection = (mode: SupportedActions) => (
       return rangeSelection(selectedItems)(idx);
     case "clear":
       return clearSelection()();
+    case "select":
+      return [idx];
   }
 };
