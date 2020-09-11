@@ -33,4 +33,7 @@ export abstract class EditorPlugin {
   setEditor(editor: this["editor"]) {
     this.editor = editor;
   }
+  setCanvas(canvas: this["canvas"]) {
+    this.canvas = canvas;
+  }
 }
