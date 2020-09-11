@@ -24,9 +24,9 @@ import { InputBase } from "./InputBase";
 import { StyledInputText } from "./InputText";
 
 export interface InputComboProps {
-  selectProps: React.SelectHTMLAttributes<HTMLSelectElement>;
-  inputProps: React.InputHTMLAttributes<HTMLInputElement>;
-  wrapperProps: React.HTMLAttributes<HTMLDivElement>;
+  selectProps?: React.SelectHTMLAttributes<HTMLSelectElement>;
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  wrapperProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export interface InputComboProps {
