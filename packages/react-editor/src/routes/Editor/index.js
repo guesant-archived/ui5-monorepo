@@ -21,6 +21,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { EventEmitter } from "@ui5/shared-lib/lib/EventEmitter";
+import * as fantasticImages from "@fantastic-images/core";
 
 const EditorGrid = styled.div`
   display: grid;
@@ -72,14 +73,28 @@ class Editor extends React.Component {
       },
       template: {},
     };
+    this.divcanvas = React.createRef();
     this.subscribePlugin = this.subscribePlugin.bind(this);
     this.setEditorBlock = this.setEditorBlock.bind(this);
+    this.setupCanvas = this.setupCanvas.bind(this);
     this.events.on("SetEditorComponent", ([location, component]) => {
       this.setEditorBlock(location, component);
     });
     ["header", "left", "right", "canvas", "footer"].forEach((location) => {
       this.setEditorBlock(location, fragment, { forceUpdate: false });
     });
+  }
+  async setupCanvas() {
+    const { template } = this.state;
+    const canvas = fantasticImages.fabric.getCanvas.canvasByDOM({ fabric })({
+      document: window.document,
+    })({ wrapper: this.divcanvas.current, id: "editor-canvas" })(template);
+    await new Promise((resolve) => this.setState({ canvas }, resolve));
+    for (const plugin of this.plugins) {
+      plugin.setCanvas(canvas);
+      await plugin.onSetupCanvas();
+    }
+    await this.events.emit("EditorOnSetupCanvas", canvas);
   }
   async onSetTemplate(template) {
     await new Promise((resolve) => this.setState({ template }, resolve));
@@ -119,7 +134,9 @@ class Editor extends React.Component {
             {React.createElement(this.getEditorBlock("left"))}
           </GridLeft>
           <GridCanvas>
-            {React.createElement(this.getEditorBlock("canvas"))}
+            <div>
+              <div ref={this.divcanvas}></div>
+            </div>
           </GridCanvas>
           <GridRight>
             {React.createElement(this.getEditorBlock("right"))}
