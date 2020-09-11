@@ -21,7 +21,7 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "npm run clean && tsc -p tsconfig.json --declaration --watch",
+    "start": "tsc -p tsconfig.json --declaration --watch",
     "build": "npm run clean && tsc -p tsconfig.json --declaration",
     "clean": "rm -rf lib"
   }
