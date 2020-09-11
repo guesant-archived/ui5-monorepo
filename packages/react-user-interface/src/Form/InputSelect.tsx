@@ -24,8 +24,8 @@ import { InputBaseProps, InputBase } from "./InputBase";
 
 export interface InputSelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement> {
-  style: InputBaseProps["style"];
-  prefix: InputBaseProps["prefix"];
+  style?: InputBaseProps["style"];
+  prefix?: InputBaseProps["prefix"];
 }
 
 export const StyledInputSelect = styled.select`
