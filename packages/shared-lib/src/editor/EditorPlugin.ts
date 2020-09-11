@@ -27,7 +27,7 @@ export abstract class EditorPlugin {
   editor?: Editor = undefined;
   abstract onRegisterPlugin(): EditorPluginInfo;
   onSetup() {}
-  onMount() {}
+  async onMount() {}
   setEditor(editor: this["editor"]) {
     this.editor = editor;
   }
