@@ -40,7 +40,7 @@ export const StyledInputCombo = styled.div`
 
 export const StyledInputComboSelect = styled.select`
   display: block;
-  width: 19ex;
+  width: 19px;
   padding: 4px;
   background: transparent;
   text-align: right;
