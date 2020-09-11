@@ -101,10 +101,11 @@ class Editor extends React.Component {
     plugin.setEditor(this);
     plugin.onSetup();
   }
-  componentDidMount() {
-    this.plugins.forEach((plugin) => {
-      plugin.setEditor(this);
-      plugin.onMount();
+  async componentDidMount() {
+    await new Promise(async () => {
+      for (const plugin of this.plugins) {
+        await plugin.onMount();
+      }
     });
   }
   render() {
