@@ -30,36 +30,25 @@ export type VerticalTabComponent =
   | React.FunctionComponent<any>
   | React.ComponentClass<any, any>;
 
-export type VerticalTabItem = () => [
-  { ui: VerticalTabUI },
-  VerticalTabComponent,
-];
+export type VerticalTabItem = [{ ui: VerticalTabUI }, VerticalTabComponent];
 
-export const VerticalTab = ({ tabs }: { tabs: VerticalTabItem[] }) => {
-  return (
-    <React.Fragment>
-      <Tabs
-        style={{
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <TabList>
-          {tabs.map((tab, idx) => {
-            const [{ ui }] = tab();
-            return <Tab key={idx}>{ui.displayText}</Tab>;
-          })}
-        </TabList>
-        {tabs.map((tab, idx) => {
-          const [, component] = tab();
-          return (
-            <TabPanel style={{ flex: 1 }} key={idx}>
-              {React.createElement(component)}
-            </TabPanel>
-          );
-        })}
-      </Tabs>
-    </React.Fragment>
-  );
-};
+export const VerticalTab = ({ tabs }: { tabs: VerticalTabItem[] }) => (
+  <Tabs
+    style={{
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+    }}
+  >
+    <TabList>
+      {tabs.map((tab, idx) => (
+        <Tab key={idx}>{tab[0].ui.displayText}</Tab>
+      ))}
+    </TabList>
+    {tabs.map((tab, idx) => (
+      <TabPanel style={{ flex: 1 }} key={idx}>
+        {React.createElement(tab[1])}
+      </TabPanel>
+    ))}
+  </Tabs>
+);
