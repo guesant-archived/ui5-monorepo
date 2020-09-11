@@ -18,7 +18,7 @@
  */
 //endregion
 
-import { Tabs, TabList, TabPanel, Tab, TabProps } from "react-tabs";
+import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
 import styled from "styled-components";
 
 const StyledTabs = styled(Tabs)``;
@@ -45,7 +45,12 @@ const StyledTabList = styled(TabList)`
   overflow: auto;
 `;
 
-const StyledTabPanel = styled(TabPanel)``;
+const StyledTabPanel = styled(TabPanel)`
+  &:not(.react-tabs__tab-panel--selected) {
+    position: absolute;
+    visibility: hidden;
+  }
+`;
 
 export {
   StyledTabs as Tabs,
