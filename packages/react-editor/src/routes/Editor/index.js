@@ -68,6 +68,7 @@ class Editor extends React.Component {
     this.state = {
       editor: {
         selectedObjects: [],
+        selectedStaticImages: [],
       },
       template: {},
     };
