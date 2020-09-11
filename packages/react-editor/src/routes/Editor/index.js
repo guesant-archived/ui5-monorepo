@@ -74,6 +74,9 @@ class Editor extends React.Component {
     };
     this.subscribePlugin = this.subscribePlugin.bind(this);
     this.setEditorBlock = this.setEditorBlock.bind(this);
+    this.events.on("SetEditorComponent", ([location, component]) => {
+      this.setEditorBlock(location, component);
+    });
     ["header", "left", "right", "canvas", "footer"].forEach((location) => {
       this.setEditorBlock(location, fragment, { forceUpdate: false });
     });
@@ -99,9 +102,6 @@ class Editor extends React.Component {
     plugin.onSetup();
   }
   componentDidMount() {
-    this.events.on("SetEditorComponent", ([location, component]) => {
-      this.setEditorBlock(location, component);
-    });
     this.plugins.forEach((plugin) => {
       plugin.setEditor(this);
       plugin.onMount();
