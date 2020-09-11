@@ -18,6 +18,7 @@
  */
 //endregion
 
+import { Canvas } from "fabric/fabric-impl";
 import { Editor } from "./Editor";
 
 export interface EditorPluginInfo {
@@ -25,6 +26,7 @@ export interface EditorPluginInfo {
 
 export abstract class EditorPlugin {
   editor?: Editor = undefined;
+  canvas?: Canvas = undefined;
   abstract onRegisterPlugin(): EditorPluginInfo;
   onSetup() {}
   async onMount() {}
