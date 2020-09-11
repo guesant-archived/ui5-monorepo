@@ -31,6 +31,7 @@ export interface Editor extends Component {
   state: {
     editor: {
       selectedObjects: number[];
+      selectedStaticImages: number[];
     };
     template: Template;
   };
