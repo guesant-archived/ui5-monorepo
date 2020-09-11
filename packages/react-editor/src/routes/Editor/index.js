@@ -67,6 +67,7 @@ class Editor extends React.Component {
     this.plugins = new Set();
     this.editorBlocks = new Map();
     this.state = {
+      canvas: null,
       editor: {
         selectedObjects: [],
         selectedStaticImages: [],
