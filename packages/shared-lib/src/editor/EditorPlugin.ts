@@ -30,6 +30,7 @@ export abstract class EditorPlugin {
   abstract onRegisterPlugin(): EditorPluginInfo;
   onSetup() {}
   async onMount() {}
+  async onSetupCanvas() {}
   async onRenderCanvas() {}
   setEditor(editor: this["editor"]) {
     this.editor = editor;
