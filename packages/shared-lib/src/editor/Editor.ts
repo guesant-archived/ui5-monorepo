@@ -41,6 +41,9 @@ export interface Editor extends Component {
     { forceUpdate }: { forceUpdate: boolean },
   ): void;
   getEditorBlock(location: EditorBlockKey): EditorBlockValue;
-  onSetTemplate(template: this["state"]["template"]): Promise<void>;
+  onSetTemplate(
+    template: this["state"]["template"],
+    ...args: any[]
+  ): Promise<void>;
   onSetEditor(editor: this["state"]["editor"]): Promise<void>;
 }
