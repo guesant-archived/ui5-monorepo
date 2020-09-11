@@ -24,6 +24,25 @@ import styled from "styled-components";
 export interface InputRadioGroupProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const StyledInputRadioGroup = styled.div``;
+export const StyledInputRadioGroup = styled.div`
+  display: flex;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  &:hover {
+    border-color: rgba(96, 94, 92, 0.1);
+  }
+
+  &:not(:hover) > :first-child {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    overflow: hidden;
+  }
+
+  &:not(:hover) > :last-child {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    overflow: hidden;
+  }
+`;
 
 export const InputRadioGroup = StyledInputRadioGroup;
