@@ -19,6 +19,7 @@
 //endregion
 
 import * as React from "react";
+import { TabsProps } from "react-tabs";
 import { Tab, TabList, TabPanel, Tabs } from "./Tabs";
 
 export interface VerticalTabUI {
@@ -32,12 +33,20 @@ export type VerticalTabComponent =
 
 export type VerticalTabItem = [{ ui: VerticalTabUI }, VerticalTabComponent];
 
-export const VerticalTab = ({ tabs }: { tabs: VerticalTabItem[] }) => (
+export const VerticalTab = ({
+  tabs,
+  tabsProps,
+}: {
+  tabs: VerticalTabItem[];
+  tabsProps?: TabsProps;
+}) => (
   <Tabs
+    {...((tabsProps as any) || {})}
     style={{
       height: "100%",
       display: "flex",
       flexDirection: "column",
+      ...tabsProps?.style,
     }}
   >
     <TabList>
