@@ -107,8 +107,15 @@ class Editor extends React.Component {
       ...args,
     );
   }
-  async onSetEditor(editor) {
+  async onSetEditor(editor, { emitEvent = true } = {}, ...args) {
+    const { editor: currentEditor } = this.state;
     await new Promise((resolve) => this.setState({ editor }, resolve));
+    emitEvent &&
+      (await this.events.emit(
+        "EditorOnSetEditor",
+        [currentEditor, editor],
+        ...args,
+      ));
   }
   setEditorBlock(location, component, { forceUpdate = true } = {}) {
     this.editorBlocks.set(location, component);
