@@ -23,7 +23,7 @@ import styled from "styled-components";
 
 export interface InputRadioItemProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  children?: JSX.Element;
+  children?: "string" | JSX.Element;
   style?: React.StyleHTMLAttributes<
     React.LabelHTMLAttributes<HTMLLabelElement>
   >;
