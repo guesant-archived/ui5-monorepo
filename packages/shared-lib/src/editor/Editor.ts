@@ -47,5 +47,9 @@ export interface Editor extends Component {
     template: this["state"]["template"],
     ...args: any[]
   ): Promise<void>;
-  onSetEditor(editor: this["state"]["editor"]): Promise<void>;
+  onSetEditor(
+    editor: this["state"]["editor"],
+    { emitEvent }?: { emitEvent?: boolean },
+    ...args: any[]
+  ): Promise<void>;
 }
