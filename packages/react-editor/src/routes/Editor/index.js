@@ -99,8 +99,13 @@ class Editor extends React.Component {
     await this.events.emit("EditorOnSetupCanvas", canvas);
   }
   async onSetTemplate(template, ...args) {
+    const { template: currentTemplate } = this.state;
     await new Promise((resolve) => this.setState({ template }, resolve));
-    await this.events.emit("EditorOnSetTemplate", ...args);
+    await this.events.emit(
+      "EditorOnSetTemplate",
+      [currentTemplate, template],
+      ...args,
+    );
   }
   async onSetEditor(editor) {
     await new Promise((resolve) => this.setState({ editor }, resolve));
