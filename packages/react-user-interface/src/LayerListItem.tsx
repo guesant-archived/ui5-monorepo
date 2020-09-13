@@ -26,11 +26,11 @@ export interface LayerListItemProps
 export const StyledLayerListItem = styled.li`
   display: flex;
   align-items: center;
-  padding: 4px 0 4px 12px;
+  padding: 4px 12px;
   border: 1px solid transparent;
   user-select: none;
   cursor: default;
-  &:hover:not(.active) {
+  &:not(.no-border):hover:not(.active) {
     border-color: #184d9e;
   }
   &.active {
