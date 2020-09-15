@@ -40,24 +40,26 @@ export const VerticalTab = ({
   tabs: VerticalTabItem[];
   tabsProps?: TabsProps;
 }) => (
-  <Tabs
-    {...((tabsProps as any) || {})}
-    style={{
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
-      ...tabsProps?.style,
-    }}
-  >
-    <TabList>
+  <div style={{ height: "100%" }}>
+    <Tabs
+      {...((tabsProps as any) || {})}
+      style={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        ...tabsProps?.style,
+      }}
+    >
+      <TabList>
+        {tabs.map((tab, idx) => (
+          <Tab key={idx}>{tab[0].ui.displayText}</Tab>
+        ))}
+      </TabList>
       {tabs.map((tab, idx) => (
-        <Tab key={idx}>{tab[0].ui.displayText}</Tab>
+        <TabPanel style={{ flex: 1, height: "100%" }} key={idx}>
+          {React.createElement(tab[1])}
+        </TabPanel>
       ))}
-    </TabList>
-    {tabs.map((tab, idx) => (
-      <TabPanel style={{ flex: 1 }} key={idx}>
-        {React.createElement(tab[1])}
-      </TabPanel>
-    ))}
-  </Tabs>
+    </Tabs>
+  </div>
 );
