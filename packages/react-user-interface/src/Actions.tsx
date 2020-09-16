@@ -30,3 +30,37 @@ export type ActionGroup = [
   ActionItem[],
 ];
 
+export const Actions = ({
+  actions,
+  defaultText = "Ação",
+}: {
+  actions: ActionGroup[];
+  defaultText?: string;
+}) => (
+  <select
+    style={{ maxWidth: "100%" }}
+    onChange={(e) => {
+      const [, fn] = actions
+        .map(([, actionItems]) => actionItems)
+        .flat(1)
+        .find(
+          ([props]) => props.value === (e.target as any).value,
+        ) as ActionItem;
+      fn && fn();
+      e.preventDefault();
+      (e.target as any).value = "-1";
+    }}
+    defaultValue="-1"
+  >
+    <option disabled value="-1" children={defaultText} />
+    {actions.map(([optProps, actionItems], optIdx) =>
+      React.createElement(optProps.label ? "optgroup" : React.Fragment, {
+        ...optProps,
+        key: optIdx,
+        children: actionItems.map(([{ ...props }], actionIdx) => (
+          <option key={`${optIdx}-${actionIdx}`} {...props} />
+        )),
+      }),
+    )}
+  </select>
+);
