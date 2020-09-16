@@ -24,3 +24,9 @@ export type ActionItem = [
   React.OptionHTMLAttributes<HTMLOptionElement>,
   () => void,
 ];
+
+export type ActionGroup = [
+  React.OptgroupHTMLAttributes<HTMLOptGroupElement>,
+  ActionItem[],
+];
+
