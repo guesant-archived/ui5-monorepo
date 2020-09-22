@@ -18,17 +18,15 @@
  */
 //endregion
 
-import fabric from "fabric/fabric-impl";
+import { TemplateObject } from "@fantastic-images/types/src/TemplateObject";
 
-const getWidth = (object: fabric.Object) =>
-  (object.width || 0) *
-  (object.type === "image" ? (object.scaleX as number) : 1);
+const getWidth = (object: TemplateObject) =>
+  (object.width || 0) * (object.scaleX as number);
 
-const getHeight = (object: fabric.Object) =>
-  (object.height || 0) *
-  (object.type === "image" ? (object.scaleY as number) : 1);
+const getHeight = (object: TemplateObject) =>
+  (object.height || 0) * (object.scaleY as number);
 
-export const calculateObjectDimensions = (object: fabric.Object) => ({
+export const calculateObjectDimensions = (object: TemplateObject) => ({
   width: getWidth(object),
   height: getHeight(object),
 });
