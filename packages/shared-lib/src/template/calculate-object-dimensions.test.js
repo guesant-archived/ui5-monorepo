@@ -30,7 +30,7 @@ test("calculate-object-dimensions: should calculate dimensions of TextBox", () =
   };
 
   expect(calculateObjectDimensions(object)).toStrictEqual({
-    width: object.width,
+    width: object.width * object.scaleX,
     height: object.height,
   });
 });

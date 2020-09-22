@@ -21,8 +21,7 @@
 import fabric from "fabric/fabric-impl";
 
 const getWidth = (object: fabric.Object) =>
-  (object.width || 0) *
-  (object.type === "image" ? (object.scaleX as number) : 1);
+  (object.width || 0) * (object.scaleX as number);
 
 const getHeight = (object: fabric.Object) =>
   (object.height || 0) *
