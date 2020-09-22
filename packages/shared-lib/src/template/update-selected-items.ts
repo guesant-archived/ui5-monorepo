@@ -18,8 +18,8 @@
  */
 //endregion
 
-import { Template, TemplateObject } from "@fantastic-images/types";
 import * as lib from "@fantastic-images/lib";
+import { Template, TemplateObject } from "@fantastic-images/types";
 
 const {
   model: {
@@ -39,17 +39,18 @@ export type fnFunction = ({
 
 export type fnObject = TemplateObject;
 
+export type fnAccepted = fnFunction | fnObject;
+
 export const updateSelectedItems = ({
   selectedItems,
 }: {
   selectedItems: number[];
-}) => ({ template }: { template: Template }) => (fn: fnFunction | fnObject) => {
+}) => ({ template }: { template: Template }) => (fn: fnAccepted) => {
   const {
     model: {
       fabricExported: { objects },
     },
   } = template;
-
   return selectedItems.reduce(
     (acc, i) =>
       UPDATE_OBJECT(i, {
@@ -57,7 +58,7 @@ export const updateSelectedItems = ({
         ...(typeof fn === "function"
           ? fn({ objects, object: objects[i], itemIndex: i })
           : fn),
-      })(acc),
+      } as any)(acc),
     template,
   );
 };
