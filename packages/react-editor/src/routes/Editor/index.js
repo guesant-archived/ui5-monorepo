@@ -18,11 +18,11 @@
  */
 //endregion
 
+import * as fantasticImages from "@fantastic-images/core";
+import { EventEmitter } from "@ui5/shared-lib/lib/EventEmitter";
+import { fabric } from "fabric";
 import * as React from "react";
 import styled from "styled-components";
-import { EventEmitter } from "@ui5/shared-lib/lib/EventEmitter";
-import * as fantasticImages from "@fantastic-images/core";
-import { fabric } from "fabric";
 
 const EditorGrid = styled.div`
   display: grid;
