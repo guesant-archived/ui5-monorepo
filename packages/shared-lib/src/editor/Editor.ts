@@ -45,6 +45,7 @@ export interface Editor extends Component {
   getEditorBlock(location: EditorBlockKey): EditorBlockValue;
   onSetTemplate(
     template: this["state"]["template"],
+    { emitEvent }?: { emitEvent?: boolean },
     ...args: any[]
   ): Promise<void>;
   onSetEditor(
