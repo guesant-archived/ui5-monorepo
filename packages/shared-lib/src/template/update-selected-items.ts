@@ -18,14 +18,8 @@
  */
 //endregion
 
-import * as lib from "@fantastic-images/lib";
+import { UPDATE_OBJECT } from "@fantastic-images/lib/dist/model/mutations/update-object";
 import { Template, TemplateObject } from "@fantastic-images/types";
-
-const {
-  model: {
-    mutations: { UPDATE_OBJECT },
-  },
-} = lib;
 
 export type fnFunction = ({
   objects,
