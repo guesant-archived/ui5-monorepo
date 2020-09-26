@@ -18,9 +18,9 @@
  */
 //endregion
 
-import { Component, FunctionComponent } from "react";
 import { Template } from "@fantastic-images/types";
 import { Canvas } from "fabric/fabric-impl";
+import { Component, FunctionComponent } from "react";
 import { EventEmitter } from "../EventEmitter";
 
 type EditorBlockKey = string;
