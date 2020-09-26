@@ -53,7 +53,10 @@ export const InputText = ({
     prefix={prefix}
     children={
       <React.Fragment>
-        <StyledInputText onFocus={({ target }) => target.select()} {...props} />
+        <StyledInputText
+          onFocus={({ target }) => (target as any).select?.call()}
+          {...props}
+        />
         {rightPreview && (
           <StyledInputText
             type="text"
