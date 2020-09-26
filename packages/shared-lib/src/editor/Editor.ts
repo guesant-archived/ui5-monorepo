@@ -22,6 +22,7 @@ import { Template } from "@fantastic-images/types";
 import { Canvas } from "fabric/fabric-impl";
 import { Component, FunctionComponent } from "react";
 import { EventEmitter } from "../EventEmitter";
+import { EditorPlugin } from "./EditorPlugin";
 
 type EditorBlockKey = string;
 type EditorBlockValue = FunctionComponent | Component | "string";
@@ -29,6 +30,7 @@ type EditorBlockValue = FunctionComponent | Component | "string";
 export interface Editor extends Component {
   events: EventEmitter;
   editorBlocks: Map<EditorBlockKey, EditorBlockValue>;
+  plugins: EditorPlugin[];
   state: {
     canvas?: Canvas;
     editor: {
