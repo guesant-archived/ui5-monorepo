@@ -1,4 +1,12 @@
 {
   "name": "root",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  },
+  "scripts": {
+    "format": "prettier **/*.{js,ts,json,md} --write",
+    "pretty": "pretty-quick --staged"
+  }
 }
