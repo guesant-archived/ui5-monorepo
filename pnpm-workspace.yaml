@@ -1,2 +1,4 @@
 packages:
-  - "packages/*/**"
+  - "./react-playground-app/"
+  - "./react-playground-shared/"
+  - "./react-playground-plugins/*/**"
