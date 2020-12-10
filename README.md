@@ -1,15 +1,12 @@
 # ui5-monorepo
 
-
-# Getting started
-
 Requirements:
 
 - [pnpm](https://www.npmjs.com/package/pnpm) package manager.
 
-```sh
-npm i -g pnpm
-```
+  ```sh
+  $ npm i -g pnpm
+  ```
 
 Setup workspace
 
@@ -17,8 +14,11 @@ Setup workspace
 git clone https://github.com/guesant/ui5-monorepo.git
 cd ui5-monorepo
 pnpm install
-# enjoy
-# cd react-playground-app; pnpm start;
+```
+
+```
+$ cd react-playground-app
+$ pnpm start
 ```
 
 ---
