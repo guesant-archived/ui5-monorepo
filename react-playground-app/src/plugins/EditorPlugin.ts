@@ -1,3 +1,5 @@
+import storeRef from "../store/configureStore";
+
 export type EditorPluginInfo = {
   slug?: string;
   meta: {
@@ -6,16 +8,11 @@ export type EditorPluginInfo = {
 };
 
 export abstract class EditorPlugin {
-  store: any;
+  store?: typeof storeRef;
   constructor(store?: any) {
     this.bindThis = this.bindThis.bind(this);
     this.setStore(store);
     this.bindThis();
-  }
-  bindThis() {
-    this.onSetup = this.onSetup.bind(this);
-    this.onMount = this.onMount.bind(this);
-    this.setStore = this.setStore.bind(this);
   }
   static registerPlugin(): EditorPluginInfo {
     return {
@@ -30,4 +27,9 @@ export abstract class EditorPlugin {
   }
   async onSetup() {}
   async onMount(): Promise<void | (() => Promise<any>)> {}
+  bindThis() {
+    this.onSetup = this.onSetup.bind(this);
+    this.onMount = this.onMount.bind(this);
+    this.setStore = this.setStore.bind(this);
+  }
 }

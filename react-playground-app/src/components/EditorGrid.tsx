@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./EditorGrid.module.css";
 
-const EditorGrid = (props) => {
+export type EditorGridProps = React.HTMLAttributes<HTMLDivElement>;
+
+const EditorGrid = (props: EditorGridProps) => {
   return <div className={styles.editorGrid} {...props} />;
 };
 

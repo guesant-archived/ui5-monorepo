@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
-import { EditorPlugin } from "../../../../EditorPlugin";
+import { EditorPlugin } from "../../../../plugins/EditorPlugin";
 
 const ADD_PLUGIN = "plugins/addPlugin";
 

@@ -1,5 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { EditorPlugin } from "../../../../EditorPlugin";
+import { EditorPlugin } from "../../../../plugins/EditorPlugin";
+
 import { addPlugin } from "../actions";
 
 const pluginsReducer = createReducer<EditorPlugin[]>([], (builder) => {

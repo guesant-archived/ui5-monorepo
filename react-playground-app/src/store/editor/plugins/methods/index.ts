@@ -1,8 +1,8 @@
-import { EditorPlugin } from "../../../../EditorPlugin";
+import { EditorPlugin } from "../../../../plugins/EditorPlugin";
 import { addPlugin } from "../actions";
 
 export const registerPlugin = (plugin: EditorPlugin) => async (
-  dispatch: any,
+  dispatch: any
 ) => {
   dispatch(addPlugin(plugin));
   await plugin.onSetup();
